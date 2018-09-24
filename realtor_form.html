@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Residential Lease Application</title>
+        <link rel="stylesheet" href="css/realtor_form.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    </head>
+    <body>
+        <form method="POST" action="https://http-inspector.glitch.me/">
+            <div id="topheader">
+                <label for="top_date">Received on</label>
+                <input id="top_date" name="top_date" type="date">
+                <label for="top_time">at</label>
+                <input id="top_time" name="top_time" type="time">
+            </div>
+            <div id="header">
+                <header>
+                    <h2>Texas Association of Realtors&reg;</h2>
+                    <h1 class="small_bottom">RESIDENTIAL LEASE APPLICATION</h1>
+                    <label class="small_font">USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION OF REALTORS IS NOT AUTHORIZED</label><br>
+                    <label class="small_font"><strong>&copy;Texas Association of REALTORS&reg;, Inc. 2018</strong></label><br>
+                    <h2><strong>Each occupant and co-applicant 18 years or older must submit a separate application.</strong></h2>
+                </header>
+            </div>
+
+            <hr>
+
+            <fieldset>
+                <label for="prop_address">Property Address:</label>
+                <input id="prop_address" name="prop_address" type="text" placeholder="address">
+                <br>
+
+                <label for="move_in">Anticipated: Move-in Date</label>
+                <input id="move_in" name="move_in" type="date">
+                <label for="month_rent">Monthly Rent: $</label>
+                <input id="month_rent" name="month_rent" type="number" placeholder="0.00">
+                <label for="security_deposit">Security Deposit: $</label>
+                <input id="security_deposit" name="security_deposit" type="number" placeholder="0.00"><br>
+                <label for="lease_termreq">Initial Lease Term Requested</label>
+                <input id="lease_termreq" name="lease_termreq" type="number" placeholder="0"><em> (months)</em>
+            </fieldset>
+
+            <fieldset>
+                <label>Property Condition: <strong>Applicant is strongly encouraged to view the Property prior to submitting any application.</strong><br>Landlord makes no express or implied warranties as to the Property's condition. Applicant requests Landlord consider the following repairs or treatments should Applicant and Landlord enter into a lease:</label>
+                <br><textarea class="textarea"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label>Applicant was referred to Landlord by:</label><br>
+                <input type="radio" name="referred" value="a">Real estate agent
+                | Name: <input id="ref_name" name="ref_name" type="text" placeholder="name">
+                Phone Number: <input id="ref_phone" name="ref_phone" type="number" placeholder="phone">
+                E-mail: <input id="ref_email" name="ref_email" type="email" placeholder="email"><br>
+                <input type="radio" name="referred" value="b">Newspaper
+                <input type="radio" name="referred" value="c">Sign
+                <input type="radio" name="referred" value="d">Internet
+                <input type="radio" name="referred" value="e">Other
+                <input id="ref_other" name="ref_other" type="text" placeholder="other">
+            </fieldset>
+
+            <fieldset>
+                <label for="app_name">Applicant's name</label>
+                <input id="app_name" name="app_name" type="text" placeholder="first, middle, last">
+                <br>
+                <label>Is there a co-applicant?</label>
+                <input type="radio" name="answer" value="a"> yes
+                <input type="radio" name="answer" value="b"> no
+                <label><em><strong>If yes, co-applicant must submit a separate application.</strong></em></label>
+                <br>
+                <label for="app_married">Applicant's former last name</label>
+                <input id="app_married" name="app_married" type="text" placeholder="maiden/married">
+                <br><br>
+
+                <div>
+                    <label for="form_email">E-mail</label>
+                    <input id="form_email" name="form_email" type="email" placeholder="email">
+                    <label for="form_homephone">Home Phone</label>
+                    <input id="form_homephone" name="form_homephone" type="number" placeholder="home phone">
+                    <label for="form_workphone">Work Phone</label>
+                    <input id="form_workphone" name="form_workphone" type="number" placeholder="work phone">
+                    <label for="form_mobilephone">Mobile Phone</label>
+                    <input id="form_mobilephone" name="form_mobilephone" type="number" placeholder="mobile phone">
+                    <br>
+                    <label for="form_soc">Soc. Sec. No.</label>
+                    <input id="form_soc" name="form_soc" type="number" placeholder="soc. sec. #">
+                    <label for="form_dl">Driver License No.</label>
+                    <input id="form_dl" name="form_dl" type="number" placeholder="driver license #">
+                    in <input id="form_dlstate" name="form_dlstate" type="text" placeholder="state">
+                    <br>
+                    <label for="form_dob">Date of Birth</label>
+                    <input id="form_dob" name="form_dob" type="date">
+                    <label>Height</label>
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <label>'</label>
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="0">0</option>
+                    </select>
+                    <label>"</label>
+                    <label for="form_weight">Weight</label>
+                    <input id="form_weight" name="form_weight" type="number" placeholder="lbs/pounds">
+                    <label for="form_eyecolor">Eye Color</label>
+                    <input id="form_eyecolor" name="form_eyecolor" type="text" placeholder="eye color">
+                    <br>
+                    <label for="form_haircolor">Hair Color</label>
+                    <input id="form_haircolor" name="form_haircolor" type="text" placeholder="hair color">
+                    <label>Marital Status</label>
+                    <select>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                    </select>
+                    <label for="form_citizenship">Citizenship</label>
+                    <input id="form_citizenship" name="form_citizenship" type="text" placeholder="country">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <label>Emergency Contact: <em>(Do not insert the name of an occupant or co-applicant.)</em></label><br>
+                <label for="emerg_name">Name:</label>
+                <input id="emerg_name" name="emerg_name" type="text" placeholder="emergency name">
+                <label for="emerg_address">Address:</label>
+                <input id="emerg_address" name="emerg_address" type="text" placeholder="emergency address">
+                <br>
+                <label for="emerg_phone">Phone:</label>
+                <input id="emerg_phone" name="emerg_phone" type="number" placeholder="emergency phone #">
+                <label for="emerg_email">E-mail:</label>
+                <input id="emerg_email" name="emerg_email" type="email" placeholder="emergency email">
+            </fieldset>
+
+            <fieldset>
+                <label>Name all other persons who will occupy the Property:</label><br>
+                <label for="occupy_name">Name:</label>
+                <input id="occupy_name" name="occupy_name" type="text" placeholder="name">
+                <label for="occupy_relation">Relationship:</label>
+                <input id="occupy_relation" name="occupy_relation" type="text" placeholder="relationship">
+                <label for="occupy_age">Age:</label>
+                <input id="occupy_age" name="occupy_age" type="number" placeholder="age">
+                <br>
+
+                <label for="occupy_name2">Name:</label>
+                <input id="occupy_name2" name="occupy_name2" type="text" placeholder="name">
+                <label for="occupy_relation2">Relationship:</label>
+                <input id="occupy_relation2" name="occupy_relation2" type="text" placeholder="relationship">
+                <label for="occupy_age2">Age:</label>
+                <input id="occupy_age2" name="occupy_age2" type="number" placeholder="age">
+                <br>
+
+                <label for="occupy_name3">Name:</label>
+                <input id="occupy_name3" name="occupy_name3" type="text" placeholder="name">
+                <label for="occupy_relation3">Relationship:</label>
+                <input id="occupy_relation3" name="occupy_relation3" type="text" placeholder="relationship">
+                <label for="occupy_age3">Age:</label>
+                <input id="occupy_age3" name="occupy_age3" type="number" placeholder="age">
+                <br>
+
+                <label for="occupy_name4">Name:</label>
+                <input id="occupy_name4" name="occupy_name4" type="text" placeholder="name">
+                <label for="occupy_relation4">Relationship:</label>
+                <input id="occupy_relation4" name="occupy_relation4" type="text" placeholder="relationship">
+                <label for="occupy_age4">Age:</label>
+                <input id="occupy_age4" name="occupy_age4" type="number" placeholder="age">
+            </fieldset>
+
+            <fieldset>
+                <label for="current_address">Applicant's Current Address:</label><br>
+                <input id="current_address" name="current_address" type="text" placeholder="address">
+                <label for="current_aptno">Apt. No.</label>
+                <input id="current_aptno" name="current_aptno" type="number" placeholder="apt #">
+                <br>
+                <label for="current_addyinfo"></label>
+                <input id="current_addyinfo" name="current_addyinfo" type="text" placeholder="city, state zipcode">
+                <br>
+                <div>
+                    <label for="landlord_name">Landlord or Property Manager's Name:</label>
+                    <input id="landlord_name" name="landlord_name" type="text" placeholder="landlord name">
+                    <label for="landlord_email">Email:</label>
+                    <input id="landlord_email" name="landlord_email" type="email" placeholder="landlord email">
+                    <label for="landlord_phone">Phone:</label>
+                    <input id="landlord_phone" name="landlord_phone" type="number" placeholder="landlord #">
+                    <br>
+                    <label for="landlord_datein">Date Moved-In:</label>
+                    <input id="landlord_datein" name="landlord_datein" type="date">
+                    <label for="landlord_dateout">Date Moved-Out:</label>
+                    <input id="landlord_dateout" name="landlord_dateout" type="date">
+                    <label for="landlord_rent">Rent: $</label>
+                    <input id="landlord_rent" name="landlord_rent" type="number" placeholder="0.00">
+                    <br>
+                    <label>Reason for move:</label><br>
+                    <textarea class="textarea" name="landlord_reason" placeholder="reason for move"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <label for="prev_address">Applicant's Previous Address:</label><br>
+                <input id="prev_address" name="prev_address" type="text" placeholder="previous address">
+                <label for="prev_aptno">Apt. No.</label>
+                <input id="prev_aptno" name="prev_aptno" type="number" placeholder="apt #">
+                <br>
+                <label for="prev_addyinfo"></label>
+                <input id="prev_addyinfo" name="prev_addyinfo" type="text" placeholder="city, state zipcode">
+                <br>
+                <div>
+                    <label for="prevlandlord_name">Landlord or Property Manager's Name:</label>
+                    <input id="prevlandlord_name" name="prevlandlord_name" type="text" placeholder="previous landlord name">
+                    <label for="prevlandlord_email">Email:</label>
+                    <input id="prevlandlord_email" name="prevlandlord_email" type="email" placeholder="previous landlord email">
+                    <label for="prevlandlord_phone">Phone:</label>
+                    <input id="prevlandlord_phone" name="prevlandlord_phone" type="number" placeholder="previous landlord #">
+                    <br>
+                    <label for="prevlandlord_datein">Date Moved-In:</label>
+                    <input id="prevlandlord_datein" name="prevlandlord_datein" type="date">
+                    <label for="prevlandlord_dateout">Date Moved-Out:</label>
+                    <input id="prevlandlord_dateout" name="prevlandlord_dateout" type="date">
+                    <label for="prevlandlord_rent">Rent: $</label>
+                    <input id="prevlandlord_rent" name="prevlandlord_rent" type="number" placeholder="0.00">
+                    <br>
+                    <label>Reason for move:</label><br>
+                    <textarea class="textarea" name="prevlandlord_reason" placeholder="reason for move"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="current_employer">Applicant's Current Employer:</label>
+                    <input id="current_employer" name="current_employer" type="text" placeholder="employer">
+                    <br>
+                    <label for="current_employeraddy">Address:</label>
+                    <input class="employeraddy" id="current_employeraddy" name="current_employeraddy" type="text" placeholder="street, city, state zipcode">
+                    <label for="current_employersupervisor">Supervisor's Name:</label>
+                    <input id="current_employersupervisor" name="current_employersupervisor" type="text" placeholder="supervisor name">
+                    <br>
+                    <label for="current_employerphone">Phone:</label>
+                    <input id="current_employerphone" name="current_employerphone" type="number" placeholder="supervisor phone">
+                    <label for="current_employerfax">Fax:</label>
+                    <input id="current_employerfax" name="current_employerfax" type="number" placeholder="supervisor fax">
+                    <label for="current_employeremail">E-mail:</label>
+                    <input id="current_employeremail" name="current_employeremail" type="email" placeholder="supervisor email">
+                    <br>
+                    <label for="current_employerstart">Start Date:</label>
+                    <input id="current_employerstart" name="current_employerstart" type="date">
+                    <label for="current_employerincome">Gross Monthly Income: $</label>
+                    <input id="current_employerincome" name="current_employerincome" type="number" placeholder="0.00">
+                    <label for="current_employerposition">Position:</label>
+                    <input id="current_employerposition" name="current_employerposition" type="text" placeholder="job title"><br>
+                    <label><em>Note:   If Applicant is self-employed, Landlord may require one or more previous year's tax return attested by a CPA, attorney, or other tax professional.</em></label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="prev_employer">Applicant's Previous Employer:</label>
+                    <input id="prev_employer" name="prev_employer" type="text" placeholder="employer">
+                    <br>
+                    <label for="prev_employeraddy">Address:</label>
+                    <input class="employeraddy" id="prev_employeraddy" name="prev_employeraddy" type="text" placeholder="street, city, state zipcode">
+                    <label for="prev_employersupervisor">Supervisor's Name:</label>
+                    <input id="prev_employersupervisor" name="prev_employersupervisor" type="text" placeholder="supervisor name">
+                    <br>
+                    <label for="prev_employerphone">Phone:</label>
+                    <input id="prev_employerphone" name="prev_employerphone" type="number" placeholder="supervisor phone">
+                    <label for="prev_employerfax">Fax:</label>
+                    <input id="prev_employerfax" name="prev_employerfax" type="number" placeholder="supervisor fax">
+                    <label for="prev_employeremail">E-mail:</label>
+                    <input id="prev_employeremail" name="prev_employeremail" type="email" placeholder="supervisor email">
+                    <br>
+                    <label for="prev_employerstart">Employed from</label>
+                    <input class="date_width" id="prev_employerstart" name="prev_employerstart" type="date">to
+                    <input class="date_width" id="prev_employerend" name="prev_employerend" type="date">
+                    <label for="prev_employerincome">Gross Monthly Income: $</label>
+                    <input id="prev_employerincome" name="prev_employerincome" type="number" placeholder="0.00">
+                    <label for="prev_employerposition">Position:</label>
+                    <input id="prev_employerposition" name="prev_employerposition" type="text" placeholder="job title">
+                </div>
+            </fieldset>
+
+            <br><input type="submit" value="Submit Form"><br><br>
+
+            <label>(TAR-2003) 10-16-07</label>
+        </form>
+    </body>
+</html>
