@@ -1,0 +1,37 @@
+.fancy-header {
+    color: purple; /* single line comment */
+    text-decoration: underline;
+    text-align: center;
+    font-family: sans-serif;
+}
+body {
+    background: #9999ff;
+}
+html {
+    font-family: Oswald;
+}
+ul {
+    list-style-type: circle;
+
+}
+ol {
+    list-style-type: upper-roman;
+}
+img.animated-gif{
+    width: 20px;
+    height: auto;
+}
+td {
+    padding: 6px;
+    border: 2px solid darkgreen;
+}
+table {
+    border: 2px solid darkslategrey;
+    background: rgba(0, 204, 255, 0.3);
+}
+a:hover {
+    color: aquamarine;
+}
+a:active {
+    color: darkslategrey;
+}
