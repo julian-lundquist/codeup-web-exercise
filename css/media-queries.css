@@ -21,7 +21,7 @@
     }
     .main, .sub-section {
         text-align: left;
-        padding: 3em 2em;
+        padding: 3em 1.3em;
     }
     h1 {
         text-align: center;
@@ -41,17 +41,19 @@
         width: 100%;
     }
 
-@media screen and (min-width: 890px) {
+@media screen and (min-width: 768px) {
     html {
         position: relative;
     }
     body {
-        background: red;
+        background: white;
         position: relative;
     }
     li {
         display: inline-block;
-        padding: .5em;
+        background-color: transparent;
+        padding: 0em;
+        border: 0px;
     }
     h1 {
         float: left;
@@ -66,7 +68,7 @@
         display: none;
     }
     .main {
-        width: 35%;
+        width: 50%;
         position: relative;
         float: left;
     }
