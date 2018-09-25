@@ -1,8 +1,45 @@
+body {
+    font-family: Arial, Ubuntu, sans-serif;
+    background: rgb(229, 229, 229);
+    margin: 0;
+}
+html {
+    width: 100%;
+}
 ul {
     list-style: none;
+    font-weight: bold;
+    color: white;
 }
 .nav-bar {
     color: black;
-    height: 3em;
+    height: 5em;
     width: 100%;
+}
+.nav {
+    background: black;
+    padding: 10px;
+    height: 2em;
+    width: 100%;
+
+}
+.nav-item {
+    text-align: center;
+    margin: auto;
+}
+li, label {
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}
+.logo {
+    color: black;
+    font-size: 24px;
+}
+.logol {
+    background-color: white;
+    padding: .1em .2em;
+    margin: 0;
+}
+.sign_in {
+    margin: 0em 5em 0em 1em;
 }
