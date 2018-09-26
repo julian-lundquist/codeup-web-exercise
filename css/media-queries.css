@@ -67,15 +67,7 @@
     .hidden-on-desktop {
         display: none;
     }
-    .main {
-        width: 50%;
-        position: relative;
-        float: left;
-    }
-    .sub-section {
-        width: 35%;
-        float: right;
-    }
+    
     footer {
         clear: both;
     }
