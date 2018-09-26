@@ -1,4 +1,4 @@
-.container {
+.h1width {
     width: 100%;
     background: white;
     opacity: .6;
@@ -24,6 +24,9 @@
 }
 .card-att {
 
+}
+.container {
+    margin: 0px;
 }
 .lgi {
     background-color: #e9ecef;
