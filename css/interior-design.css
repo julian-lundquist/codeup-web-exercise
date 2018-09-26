@@ -1,0 +1,72 @@
+html, body, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+nav {
+    position: relative;
+}
+.nav-links {
+    height: 100%;
+    padding: 0;
+}
+.links {
+    text-align: center;
+}
+.nav_main {
+    background-color: orange;
+    height: 100%;
+}
+.img {
+    width: 100em;
+    height: 280px;
+}
+.container {
+    max-width: 1200px;
+}
+.img_container {
+    width: 80%;
+    float: left;
+}
+.column {
+    float: left;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.row>img {
+    margin: 0;
+}
+.column.one-eighth {
+    width: 12.5%;
+}
+.column.one-fifth {
+    width: 20%;
+}
+.column.one-fourth {
+    width: 25%;
+}
+.column.one-third {
+    width: 33.33%;
+}
+.column.one-half {
+    width: 50%;
+}
+.row {
+    width:75%;
+    float: left;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 1080px) {
+    .column.one-third.one-half.one-fourth.one-eighth {
+        width: 100%;
+    }
+}
