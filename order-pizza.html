@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/order-pizza.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title>Pizza Order</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+            </form>
+        </div>
+        <a class="nav-item nav-link" href="#">Sign Up</a>
+    </nav>
+    <div class="pizzaimg jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to Pizza World!</h1>
+        </div>
+    </div>
+    <h2>Build your own pizza!</h2><hr>
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#size" role="tab" data-toggle="tab"><span class="badge numbered badge-pill badge-info">1</span> Size and Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cheese" role="tab" data-toggle="tab"><span class="badge numbered badge-pill badge-info">2</span> Cheese and Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#toppings" role="tab" data-toggle="tab"><span class="badge numbered badge-pill badge-info">3</span> Toppings</a>
+            </li>
+        </ul>
+    </div>
+<div class="tab-content">
+    <div class="card card_bottom tab-pane active" role="tabpanel" id="size">
+        <div class="card-body card-att bg-primary text-white">
+            <span class="badge numbered badge-pill badge-info">1</span> Choose size and crust
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Hand Tossed</li>
+                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                    <li class="list-group-item bg-primary text-white"><input type="radio" name="size1"> Small (10")</li>
+                    <li class="list-group-item bg-primary text-white"><input type="radio" name="size1"> Medium (12")</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Crunchy thin crust</li>
+                    <li class="list-group-item">Thin enough for the optimum crispy to crunchy ratio.</li>
+                    <li class="list-group-item bg-primary text-white"><input type="radio" name="size2"> Small (10")</li>
+                    <li class="list-group-item bg-primary text-white"><input type="radio" name="size2"> Medium (12")</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer list-group-item-secondary clearfix">
+            <button class="card_btn btn btn-sm btn-outline-success" type="submit" href="#cheese">Next Step <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="card card_bottom tab-pane" role="tabpanel" id="cheese">
+        <div class="card-body card-att bg-primary text-white">
+            <span class="badge numbered badge-pill badge-info">2</span> Choose cheese and sauce
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Cheese?</li>
+                    <li class="list-group-item bg-primary text-white">Amount<br>
+                        <select name="cheese_amount" id="cheese_amount">
+                            <option value="light">Light</option>
+                            <option value="medium">Medium</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Sauce?</li>
+                    <li class="list-group-item bg-primary text-white">Type<br>
+                        <select name="sause_type" id="sause_type">
+                            <option value="robust">Robust Inspired Tomato Sauce</option>
+                            <option value="bbq">BBQ Sauce</option>
+                            <option value="marinara">Marinara Sauce</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item bg-primary text-white">Amount<br>
+                        <select name="sause_amount" id="sause_amount">
+                            <option value="light">Light</option>
+                            <option value="medium">Medium</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer list-group-item-secondary clearfix">
+            <button class="card_btn btn btn-sm btn-outline-success my-2 my-sm-0" type="submit" href="#toppings">Next Step <i class="fas fa-arrow-right"></i></button>
+            <button class="card_btn btn btn-sm btn-outline-success my-2 my-sm-0" type="submit" href="#size"><i class="fas fa-arrow-left"></i> Previous</button>
+        </div>
+    </div>
+
+    <div class="card card_bottom tab-pane" role="tabpanel" id="toppings">
+        <div class="card-body card-att bg-primary text-white">
+            <span class="badge numbered badge-pill badge-info">3</span> Choose toppings
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Choose meats</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Beef</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Ham</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Philly Steak</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Bacon</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Choose non-meats</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Green Peppers</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Mushrooms</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Onions</li>
+                    <li class="list-group-item bg-primary text-white"><input type="checkbox" name="meat_option"> Jalapeno Peppers</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer list-group-item-secondary clearfix" href="">
+            <button class="card_btn btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Checkout <i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
