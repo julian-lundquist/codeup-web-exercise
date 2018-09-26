@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+    background: white;
+    opacity: .6;
+}
+.navbar {
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+/*li {*/
+    /*display: inline-block;*/
+/*}*/
+.pizzaimg {
+    background-image: url("../img/pizza.png");
+}
+.jumbotron {
+    margin: 1.5em 0em;
+}
+.jumbotron>img {
+    width: 100%;
+}
+.numbered {
+
+}
+.card-att {
+
+}
+.lgi {
+    background-color: #e9ecef;
+}
+.card_btn {
+    float: right;
+}
+.card_bottom {
+    margin-bottom: 1em;
+}
+h1 {
+    text-align: center;
+}
