@@ -12,6 +12,8 @@
 /*}*/
 .pizzaimg {
     background-image: url("../img/pizza.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .text_regulate {
     height: calc(2.25rem + 2px);
