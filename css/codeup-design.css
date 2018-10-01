@@ -1,0 +1,69 @@
+body, html {
+    background-color: #F0F0F0;
+    font-family: Anton;
+}
+h1 {
+    font-size: 48px;
+}
+section {
+    display: flex;
+    justify-content: flex-start;
+}
+div.col-6>img {
+    box-shadow: 0 0 1px 10px #E6E6E6;
+}
+
+.container>img {
+    position: relative;
+    border-radius: 60%;
+    left: 60px;
+}
+.circle {
+    border-radius: 50%;
+}
+.navbar {
+    font-family: Abel;
+    margin-top: 2em;
+    flex-wrap: wrap-reverse;
+}
+.size {
+    width: 80px;
+    height: 80px;
+}
+.size2 {
+    width: 35px;
+    height: 25px;
+}
+.no-padding {
+    padding: 0;
+}
+.abel {
+    font-family: Abel;
+}
+.box-size {
+    background-color: #e6563b;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+    border: .5em solid white;
+    position: relative;
+    /*bottom: 40px;*/ /*remove this*/
+    /*left: 40px;*/
+    font-size: 26px;
+    color: white;
+}
+.c2 {
+    background-color: #EB9D3A;
+}
+.c3 {
+    background: #7CB06C;
+}
+.c4 {
+    background-color: #00ABA9;
+}
+.lab-pos {
+    position: relative;
+    top: 50px;
+
+}
