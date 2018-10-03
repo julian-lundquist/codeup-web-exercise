@@ -38,14 +38,14 @@ alert("Your total pay for " + totalHours + " hours worked is $" + totalPay.toFix
 
 
 alert("Can you be enrolled in this class?");
-var peopleInClass = 10;
+var peopleInClass = confirm("Is the class not full?");
 var schedule = confirm("Is your schedule free?");
 
-if (peopleInClass < 20 && schedule == true) {
+if (peopleInClass == true && schedule == true) {
     alert("Congrats, you are able to be enrolled!");
 }
 else {
-    alert("Please contact the office.");
+    alert("Please contact the office, enrollment is full.");
 }
 
 
@@ -56,7 +56,7 @@ itemsPurchased = parseInt(itemsPurchased);
 var premiumMember = confirm("Are you a Premium Member?");
 var offerNotExpired = confirm("Is the offer still valid?");
 
-if (itemsPurchased >= 2 || premiumMember == true && (offerNotExpired == true)) {
+if ((itemsPurchased >= 2 && offerNotExpired == true) || premiumMember == true) {
     alert("The product offer has been applied!");
 }
 else if (offerNotExpired == false) {
