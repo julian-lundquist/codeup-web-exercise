@@ -36,8 +36,8 @@ console.log(helloMessage);
 var myName = 'Julian';
 console.log(sayHello(myName))
 
-// Don't modify the following line, it generates a random number between 1 and 3
-// and stores it in a variable named random
+Don't modify the following line, it generates a random number between 1 and 3
+and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
 /**
@@ -82,7 +82,7 @@ function calculateTip(tipPercent, totalAmount) {
     return tipCalc;
 }
 
-// console.log(calculateTip(.15, 33.42));
+console.log(calculateTip(.15, 33.42));
 
 /**
  * TODO:
@@ -91,10 +91,10 @@ function calculateTip(tipPercent, totalAmount) {
  * then display the dollar amount they should tip
  */
 
-// var tipPercent = prompt('What is the tip %? (via decimal)');
-// var totalAmount = prompt('What was the total amount paid?');
+var tipPercent = prompt('What is the tip %? (via decimal)');
+var totalAmount = prompt('What was the total amount paid?');
 
-// console.log(alert('Your total tip should be ' + calculateTip(parseFloat(tipPercent), parseFloat(totalAmount))));
+console.log(alert('Your total tip should be ' + calculateTip(parseFloat(tipPercent), parseFloat(totalAmount))));
 
 /**
  * TODO:
