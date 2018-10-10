@@ -11,7 +11,7 @@ console.log(showMultiplicationTable());
 
 
 for (var eo = 0; eo < 10; eo += 1) {
-    var randy = Math.floor(Math.random() * 20) + 180;
+    var randy = Math.floor(Math.random() * 180) + 20;
     if (randy % 2 === 0) {
         console.log(randy + ' is even');
     } else if (randy % 2 !== 0) {
