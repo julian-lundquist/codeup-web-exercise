@@ -1,6 +1,11 @@
 "use strict";
 
-var skip = parseFloat(prompt('What odd number do you want to skip?'));
+var skip;
+do {
+    skip = parseFloat(prompt('What odd number do you want to skip?'));
+    console.log('Your number to skip is: ' + skip);
+} while (skip % 2 === 0);
+
 for (var a = 1; a <= 50; a += 1) {
     if (a % 2 !== 0) {
         if (a === skip) {
