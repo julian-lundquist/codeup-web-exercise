@@ -15,11 +15,10 @@ do {
     if (allCones >= perSale) {
         allCones -= perSale;
         console.log(perSale + ' cones sold, ' + (allCones) + ' to go!');
-        if (allCones === 0) {
-            console.log('Wow! You sold out all the cones fast');
-        }
     }
     else if (allCones < perSale) {
         console.log('You have ' + allCones + ' left and cannot sell ' + perSale + ' cones.');
     }
 } while (0 < allCones);
+
+console.log('Wow! You sold out all the cones fast');
