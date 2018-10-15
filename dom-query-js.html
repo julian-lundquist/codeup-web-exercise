@@ -26,6 +26,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button type="submit" id="header-button">Click me</button>
+<button type="submit" id="second-button">Dont Click</button>
+<button type="submit" id="third-button">Submit It</button>
+<button type="submit" id="fourth-button">Look</button>
+
 <script>
     (function() {
         "use strict";
@@ -64,6 +69,44 @@
 
         subParagraphs[0].innerText = 'Mission Accomplished!';
     })();
+    (function f() {
+        var first = document.querySelector('#header-button');
+        var second = document.querySelector('#second-button');
+        var third = document.querySelector('#third-button');
+        var fourth = document.querySelector('#fourth-button');
+        var color = ['red', 'green', 'blue', 'orange', 'yellow', 'purple'];
+        var rng = Math.floor(Math.random() * (color.length));
+        var rngColor = color[rng];
+
+        first.addEventListener('click', function () {
+            first.style.background = 'lightblue';
+            first.innerText = 'JS is Awesome!';
+        });
+        second.addEventListener('click', function () {
+            var rng = Math.floor(Math.random() * (color.length));
+            var rngColor = color[rng];
+            second.style.background = rngColor;
+            second.innerText = 'WHY!';
+        });
+        third.addEventListener('mouseover', function () {
+            var rng = Math.floor(Math.random() * (color.length));
+            var rngColor = color[rng];
+            third.style.background = rngColor;
+            third.innerText = 'Wowzer';
+        });
+        fourth.addEventListener('click', function () {
+            fourth.style.background = 'brown';
+            fourth.innerText = 'Cool';
+        });
+
+        var buttons = document.getElementsByTagName("button");
+
+    })();
+        buttons.forEach(function(button, index) {
+            button.addEventListener("click", function() {
+                button.style.background = color[index];
+            });
+        });
 </script>
 </body>
 </html>
