@@ -59,9 +59,10 @@
     var discountCalc = function () {
         shoppers.forEach(function (shopper) {
             if (shopper.amount >= 200) {
-                var discountedAmount = shopper.amount - (shopper.amount * .12);
+                var discountedAmount = (shopper.amount - (shopper.amount * .12));
                 var saved = shopper.amount - discountedAmount;
-                console.log(shopper.name + ', with a 12% discount you saved $' + (saved.toFixed(2)) + ' and your total is $' + discountedAmount + ' instead of $' + shopper.amount + '.');
+                saved.toFixed(2);
+                console.log(shopper.name + ', with a 12% discount you saved $' + (saved) + ' and your total is $' + discountedAmount.toFixed(2) + ' instead of $' + shopper.amount + '.');
             } else {
                 console.log(shopper.name + ', you need to pay $' + (200 - shopper.amount) + ' more to be eligible for the discount and your total is $' + shopper.amount + '.');
             }
@@ -123,21 +124,21 @@
 
     var manyBooks = [
         {
-            bookNum: 'Book # 1',
+            bookNum: 'Book # ',
             title: 'The Salmon of Doubt',
             author: {
                 firstName: 'Douglas', lastName: 'Adams'
             }
         },
         {
-            bookNum: 'Book # 2',
+            bookNum: 'Book # ',
             title: 'Walkaway',
             author: {
                 firstName: 'Cory', lastName: 'Doctorow'
             }
         },
         {
-            bookNum: 'Book # 3',
+            bookNum: 'Book # ',
             title: 'A Brief History of Time',
             author: {
                 firstName: 'Stephen', lastName: 'Hawking'
@@ -145,8 +146,8 @@
         },
     ];
 
-    manyBooks.forEach(function (book) {
-        console.log(book.bookNum + '\nTitle: ' + book.title + '\nAuthor: ' + book.author.firstName + ' ' + book.author.lastName);
+    manyBooks.forEach(function (book, index) {
+        console.log(book.bookNum + (index + 1) + '\nTitle: ' + book.title + '\nAuthor: ' + book.author.firstName + ' ' + book.author.lastName + '\n---');
     });
 
     /**
