@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
+Long <input type="number" id="lng" value="-98.5005">
+Lat <input type="number" id="lat" value="29.4404">
+Zoom Amount <input type="number" id="zoom" value="18">
+<button type="submit" id="searchIt">Search</button>
+<p>The Cove is at Longitude: -98.5005 Latitude: 29.4404</p>
+
+
+<script>
+
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'gar5OjSbItTwwU72V8q7',
+        'app_code': 'ph309B4Y5CtozD1_gOgpfg'
+    });
+
+    var markers = [];
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+
+    // Instantiate (and display) a map object:
+    var search = document.getElementById('searchIt');
+
+    // if (search.key == 'Enter' || search.c) {
+        search.addEventListener('click', function () {
+            var newLng = document.getElementById('lng');
+            var newLat = document.getElementById('lat');
+            var newZoom = document.getElementById('zoom');
+            document.getElementById('mapContainer').innerHTML = "";
+            markers.push(new H.map.Marker({lng: newLng.value, lat: newLat.value}));
+            var map = new H.Map(
+                document.getElementById('mapContainer'),
+                maptypes.normal.map,
+                {
+                    zoom: newZoom.value,
+                    center: { lng: newLng.value, lat: newLat.value }
+                });
+                for (var marker of markers) {
+                    map.addObject(marker);
+                }
+        });
+    // }
+</script>
+
+</body>
+</html>
