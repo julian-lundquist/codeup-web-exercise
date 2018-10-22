@@ -49,6 +49,16 @@ Zoom Amount <input type="number" id="zoom" value="18">
                     map.addObject(marker);
                 }
         });
+
+        function addMarkerToGroup(group, coordinate, html) {
+            var marker = new H.map.Marker(coordinate);
+            // add custom data to the marker
+            marker.setData(html);
+            group.addObject(marker);
+        }
+            addMarkerToGroup(group, {lng: newLng.value, lat: newLat.value},
+                '<div ><a href=\'http://www.liverpoolfc.tv\' >Liverpool</a>' +
+                '</div><div >Anfield<br>Capacity: 45,362</div>');
     // }
 </script>
 
