@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/grid-layout.css">
+    <title>Document</title>
+</head>
+<body>
+
+<h1 class="text-center">Welcome</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae hendrerit urna. Nullam eget lacinia sem. Donec non velit et metus mattis vehicula. Morbi leo tortor, cursus eget pharetra ac, laoreet quis lorem.</p>
+
+<ul>
+    <li class="codeup">apple</li>
+    <li class="codeup">boat</li>
+    <li class="codeup">cat</li>
+    <li class="codeup">dog</li>
+</ul>
+
+<div id=""><button type="submit" id="clickMe">Click</button></div>
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+
+    $('.codeup').css('border', '1px solid blue');
+    $('li').css('font-size', '20px');
+    $('h1, p, li').css('color', 'blue');
+    $('h1').click(function () {
+        $(this).css('background', 'grey')
+    });
+    $('p').dblclick(function () {
+        $(this).css('font-size', '18px')
+    });
+    $('#clickMe').hover(function (e) {
+        $(this).css('background', e.type === "mouseenter" ? "green" : "transparent")
+    });
+    $('li').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'blue');
+        }
+    );
+    $('#clickMe').click(function (e) {
+        $(this).css('background', e.type = 'red')
+    });
+
+    $(function () {
+        alert($('h1').html());
+    });
+
+</script>
+
+</body>
+</html>
