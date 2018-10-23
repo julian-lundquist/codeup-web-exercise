@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+    var extraLives = '3838404037393739666513';
+    var order = '';
+
+    $(document).keyup(function(event){
+        order += event.keyCode;
+        if (order.includes(extraLives)) {
+            $('body').css('background', 'blue');
+            alert('You have added 30 lives!');
+        }
+    });
+
+</script>
+</body>
+</html>
