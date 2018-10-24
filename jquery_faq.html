@@ -32,6 +32,38 @@
 
 <button type="button" id="dd_toggle">More Information</button>
 
+<div id="one">
+    <h3>State Parks of Texas</h3>
+    <ul>
+        <li>Hello</li>
+        <li>Change</li>
+        <li>This</li>
+        <li>List</li>
+    </ul>
+</div>
+
+<div class="one">
+    <h3>State Parks of Texas</h3>
+    <ul>
+        <li>Hello</li>
+        <li>Change</li>
+        <li>This</li>
+        <li>List</li>
+    </ul>
+</div>
+
+<div class="one">
+    <h3>State Parks of Texas</h3>
+    <ul>
+        <li>Hello</li>
+        <li>Change</li>
+        <li>This</li>
+        <li>List</li>
+    </ul>
+</div>
+
+<button type="button" id="last_toggle">Last 1</button>
+
 <script src="js/jquery.js"></script>
 <script>
         $('dd').addClass('invisible');
@@ -45,6 +77,18 @@
         $('#dd_toggle').click(function () {
             $('dd').toggleClass('invisible');
         });
+
+        $('#last_toggle').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().toggleClass('highlight');
+            });
+        });
+        $('h3').click(function () {
+            $(this).next().children().toggleClass('bold');
+        });
+        $('ul').children().click(function () {
+            $(this).parent().first().css('color', 'blue');
+        });
 </script>
 
 <style>
@@ -53,6 +97,9 @@
     }
     .highlight {
         background-color: yellow;
+    }
+    .bold {
+        font-weight: bold;
     }
 </style>
 </body>
