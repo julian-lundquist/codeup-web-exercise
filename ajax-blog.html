@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Blog</title>
+weather
+</head>
+
+<body>
+
+<h1 class="text-center">Blog</h1>
+<div id="content">
+
+</div>
+
+<label for="refresh_blog" id="refresh_status"></label>
+<button type="button" id="refresh_blog" class="btn-sm btn-primary mt-4 ml-2">Refresh Posts</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/blog.json
+
+        function buildHTML(blog) {
+            var totalHtml = '';
+            blog.forEach(function (entry) {
+            totalHtml += '<div class="eachEntry">';
+                totalHtml += '<h3>' + entry.title + '</h3>';
+                totalHtml += '<span>' + entry.main + '</span>';
+            totalHtml += '</div>';
+            });
+            return totalHtml;
+        }
+
+        $.ajax('data/blog.json').done (function (data) {
+            $('#content').html(buildHTML(data));
+        });
+
+        $('#refresh_blog').click(function () {
+            // $('#content').html('');
+            $.ajax("data/blog.json").done (function(data){
+                $('#content').html(buildHTML(data));
+            }).done (function () {
+                console.log('Refresh Successful');
+                $('#refresh_status').stop();
+                $('#refresh_status').show();
+                $('#refresh_status').css("opacity", 1);
+                $('#refresh_status').html('Refresh Successful');
+                $('#refresh_status').fadeOut(2000);
+            });
+        });
+
+
+
+        // TODO: Take the data from blog.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
+</script>
+
+<style>
+    #refresh_status {
+        position: absolute;
+    }
+    .eachEntry {
+        border: 2px solid green;
+    }
+</style>
+
+</body>
+</html>
