@@ -1,28 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="css/weather_map.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
+    <body>
+        <div class="container">
 
-<div class="container">
+        <div class="row">
+            <div class="col-4 weatherSize">
+                <div id="info_1"></div>
+            </div>
+            <div class="col-4 weatherSize">
+                <div id="info_2"></div>
+            </div>
+            <div class="col-4 weatherSize">
+                <div id="info_3"></div>
+            </div>
+        </div>
+        </div>
 
-<div class="row">
-    <div class="col-4 weatherSize">
-        <div id="info_1"></div>
-    </div>
-    <div class="col-4 weatherSize"></div>
-    <div class="col-4 weatherSize"></div>
-</div>
-</div>
+        <div style="width: 640px; height: 480px" id="mapContainer"></div>
+        <!--Long <input type="number" id="lng" value="-98.5005">-->
+        <!--Lat <input type="number" id="lat" value="29.4404">-->
+        <p>The Cove is at Longitude: -98.5005 Latitude: 29.4404</p>
+        <label id="lng" value="-98.5005"></label>
+        <label id="lat" value="29.4404"></label>
+        <button type="submit" id="searchIt">Search</button>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="js/weather_map.js"></script>
-</body>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/weather_map.js"></script>
+    </body>
 </html>
