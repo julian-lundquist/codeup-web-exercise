@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead class="outline">
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+
+<label for="refresh_inv" id="refresh_status"></label>
+<button type="button" id="refresh_inv" class="btn-sm btn-success mt-4 ml-2">Refresh Inventory</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
+
+        function buildHTML(inventoryObject) {
+            var totalHTML = '';
+            inventoryObject.forEach(function (item) {
+            totalHTML += '<tr>';
+                totalHTML += '<th>' + item.title + '</th>';
+                totalHTML += '<th>' + item.quantity + '</th>';
+                totalHTML += '<th class="Itm_price">' + item.price + '</th>';
+                totalHTML += '<th>' + item.categories + '</th>';
+            totalHTML += '</tr>';
+            });
+            return totalHTML;
+        }
+
+        $.ajax('data/inventory.json').done (function (data) {
+            $('#insertProducts').append(buildHTML(data));
+            $('th').css('border', '1px solid black');
+        });
+
+        $('#refresh_inv').click(function () {
+            $('#insertProducts').html('');
+            $.ajax("data/inventory.json").done (function(data){
+                $('#insertProducts').append(buildHTML(data));
+                $('th').css('border', '1px solid black');
+            }).done (function () {
+                console.log('Refresh Successful');
+                $('#refresh_status').stop();
+                $('#refresh_status').show();
+                $('#refresh_status').css("opacity", 1);
+                $('#refresh_status').html('Refresh Successful');
+                $('#refresh_status').fadeOut(2000);
+            });
+        });
+
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
+</script>
+
+<style>
+    .Itm_price {
+        color: green;
+    }
+    #refresh_status {
+        position: absolute;
+    }
+</style>
+
+</body>
+</html>
