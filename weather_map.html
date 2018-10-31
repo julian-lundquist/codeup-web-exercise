@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map API</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-            type="text/javascript" charset="utf-8"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-            type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <link rel="stylesheet" href="css/weather_map.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
@@ -33,10 +33,9 @@
 
         <!--Long <input type="number" id="lng" value="-98.5005">-->
         <!--Lat <input type="number" id="lat" value="29.4404">-->
-        <p>The Cove is at </p>
-        <label id="lng" value="-98.5005"></label>
-        <label id="lat" value="29.4404"></label>
-        <button type="submit" id="searchIt">Search</button>
+        <label>The Coord is at: </label>
+        <label id="curr_lat">29.4404</label>
+        <label id="curr_lon">-98.5005</label>
 
 
 
