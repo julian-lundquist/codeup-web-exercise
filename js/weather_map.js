@@ -26,97 +26,94 @@ $(document).ready(function() {
 
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
-        id: 4726206,
+        lat: 29.4404,
+        lon: -98.5005,
         units: "imperial"
     }).done(function(data) {
-
-        var result = getMinMaxDayTemp(data, 1);
-        console.log(result.min);
+        var day1 = getMinMaxDayTemp(data, 1);
+        $('#info_1').append(`Min: ${day1.min} Max: ${day1.max}`);
+    }).done(function (data) {
+        var day2 = getMinMaxDayTemp(data, 2);
+        $('#info_2').append(`Min: ${day2.min} Max: ${day2.max}`);
+    }).done(function (data) {
+        var day3 = getMinMaxDayTemp(data, 3);
+        $('#info_3').append(`Min: ${day3.min} Max: ${day3.max}`);
     });
 
     // ------------------------------------------------------------
     // CODE FOR MAP
     // Initialize the platform object:
+
+    /**
+     * Boilerplate map initialization code starts below:
+     */
+
+//Step 1: initialize communication with the platform
     var platform = new H.service.Platform({
-        'app_id': 'gar5OjSbItTwwU72V8q7',
-        'app_code': 'ph309B4Y5CtozD1_gOgpfg'
+        app_id: 'gar5OjSbItTwwU72V8q7',
+        app_code: 'ph309B4Y5CtozD1_gOgpfg',
+        useHTTPS: true
+    });
+    var pixelRatio = window.devicePixelRatio || 1;
+    var defaultLayers = platform.createDefaultLayers({
+        tileSize: pixelRatio === 1 ? 256 : 512,
+        ppi: pixelRatio === 1 ? undefined : 320
     });
 
-    // Obtain the default map types from the platform object
-    var maptypes = platform.createDefaultLayers();
-
-    // Instantiate (and display) a map object:
-    var map = new H.Map(
-        document.getElementById('mapContainer'),
-        maptypes.normal.map,
-        {
-            zoom: 10,
-            center: { lng: 13.4, lat: 52.51 }
+//Step 2: initialize a map - this map is centered over Boston
+    var map = new H.Map(document.getElementById('map'),
+        defaultLayers.normal.map,{
+            center: {lat:29.4404, lng:-98.5005},
+            zoom: 12,
+            pixelRatio: pixelRatio
         });
-    // function moveMapToBerlin(map){
-    //     map.setCenter({lat:52.5159, lng:13.3777});
-    //     map.setZoom(14);
-    // }
-    // moveMapToBerlin();
-    function addMarkerToGroup(group, coordinate, html) {
-        var marker = new H.map.Marker(coordinate);
-        // add custom data to the marker
-        marker.setData(html);
-        group.addObject(marker);
-    }
 
-    addMarkerToGroup(group, {lng: newLng.value, lat: newLat.value});
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
+// Step 4: Create the default UI:
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
 
-    function addDraggableMarker(map, behavior){
-
-        var marker = new H.map.Marker({lat:42.35805, lng:-71.0636});
-        // Ensure that the marker can receive drag events
-        marker.draggable = true;
-        map.addObject(marker);
-
-        // disable the default draggability of the underlying map
-        // when starting to drag a marker object:
-        map.addEventListener('dragstart', function(ev) {
-            var target = ev.target;
-            if (target instanceof H.map.Marker) {
-                behavior.disable();
-            }
-        }, false);
-
-
-        // re-enable the default draggability of the underlying map
-        // when dragging has completed
-        map.addEventListener('dragend', function(ev) {
-            var target = ev.target;
-            if (target instanceof mapsjs.map.Marker) {
-                behavior.enable();
-            }
-        }, false);
-
-        // Listen to the drag event and move the position of the marker
-        // as necessary
-        map.addEventListener('drag', function(ev) {
-            var target = ev.target,
-                pointer = ev.currentPointer;
-            if (target instanceof mapsjs.map.Marker) {
-                target.setPosition(map.screenToGeo(pointer.viewportX, pointer.viewportY));
-            }
-        }, false);
-    }
-
-
-    // alternative way of writing GET request
-    // $.get({
-    //     url: "http://api.openweathermap.org/data/2.5/forecast",
-    //     data: {
-    //         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
-    //         q: "San Antonio, US"
-    //     }
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
+// Add the click event listener.
+    addDraggableMarker(map, behavior);
 
 });
 
-marker.map();
+function addDraggableMarker(map, behavior){
+
+    var marker = new H.map.Marker({lat:42.35805, lng:-71.0636});
+    // Ensure that the marker can receive drag events
+    marker.draggable = true;
+    map.addObject(marker);
+
+    // disable the default draggability of the underlying map
+    // when starting to drag a marker object:
+    map.addEventListener('dragstart', function(ev) {
+        var target = ev.target;
+        if (target instanceof H.map.Marker) {
+            behavior.disable();
+        }
+    }, false);
+
+
+    // re-enable the default draggability of the underlying map
+    // when dragging has completed
+    map.addEventListener('dragend', function(ev) {
+        var target = ev.target;
+        if (target instanceof mapsjs.map.Marker) {
+            behavior.enable();
+        }
+    }, false);
+
+    // Listen to the drag event and move the position of the marker
+    // as necessary
+    map.addEventListener('drag', function(ev) {
+        var target = ev.target,
+            pointer = ev.currentPointer;
+        if (target instanceof mapsjs.map.Marker) {
+            target.setPosition(map.screenToGeo(pointer.viewportX, pointer.viewportY));
+        }
+    }, false);
+}
