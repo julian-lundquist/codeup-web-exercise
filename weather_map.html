@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Weather Map API</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
             type="text/javascript" charset="utf-8"></script>
@@ -18,22 +18,22 @@
         <div class="container">
 
         <div class="row">
-            <div class="col-4 weatherSize">
-                <div id="info_1"></div>
+            <div class="col-4 weatherSize p-5">
+                <div id="info_1" class="text-center"></div>
             </div>
-            <div class="col-4 weatherSize">
-                <div id="info_2"></div>
+            <div class="col-4 weatherSize p-5">
+                <div id="info_2" class="text-center"></div>
             </div>
-            <div class="col-4 weatherSize">
-                <div id="info_3"></div>
+            <div class="col-4 weatherSize p-5">
+                <div id="info_3" class="text-center"></div>
             </div>
         </div>
+            <div style="width: 740px; height: 580px" id="map"></div>
         </div>
 
-        <div style="width: 640px; height: 480px" id="mapContainer"></div>
         <!--Long <input type="number" id="lng" value="-98.5005">-->
         <!--Lat <input type="number" id="lat" value="29.4404">-->
-        <p>The Cove is at Longitude: -98.5005 Latitude: 29.4404</p>
+        <p>The Cove is at </p>
         <label id="lng" value="-98.5005"></label>
         <label id="lat" value="29.4404"></label>
         <button type="submit" id="searchIt">Search</button>
