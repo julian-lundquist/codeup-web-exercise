@@ -19,7 +19,42 @@ Zoom Amount <input type="number" id="zoom" value="18">
 <script>
 
     // Initialize the platform object:
-
+    var platform = new H.service.Platform({
+        'app_id': 'gar5OjSbItTwwU72V8q7',
+        'app_code': 'ph309B4Y5CtozD1_gOgpfg'
+    });
+    var markers = [];
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+    // Instantiate (and display) a map object:
+    var search = document.getElementById('searchIt');
+    // if (search.key == 'Enter' || search.c) {
+    search.addEventListener('click', function () {
+        var newLng = document.getElementById('lng');
+        var newLat = document.getElementById('lat');
+        var newZoom = document.getElementById('zoom');
+        document.getElementById('mapContainer').innerHTML = "";
+        markers.push(new H.map.Marker({lng: newLng.value, lat: newLat.value}));
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+                zoom: newZoom.value,
+                center: { lng: newLng.value, lat: newLat.value }
+            });
+        for (var marker of markers) {
+            map.addObject(marker);
+        }
+    });
+    function addMarkerToGroup(group, coordinate, html) {
+        var marker = new H.map.Marker(coordinate);
+        // add custom data to the marker
+        marker.setData(html);
+        group.addObject(marker);
+    }
+    addMarkerToGroup(group, {lng: newLng.value, lat: newLat.value},
+        '<div ><a href=\'http://www.liverpoolfc.tv\' >Liverpool</a>' +
+        '</div><div >Anfield<br>Capacity: 45,362</div>');
 
 </script>
 
